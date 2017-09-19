@@ -15,11 +15,11 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     };
 
     $scope.deleteListing = function(index) {
-      $scope.listings.splice(index, 1);
+      $scope.listings.splice($scope.listings.indexOf(index),1);
     };
 
     $scope.showDetails = function(index) {
-      $scope.detailedInfo = $scope.listings[index];
+      $scope.detailedInfo = {'name':index.name, 'address':index.address, 'code':index.code}
     };
   }
 ]);
